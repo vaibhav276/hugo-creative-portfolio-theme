@@ -1639,7 +1639,7 @@ hr {
   margin-bottom: 24px;
   background-color: transparent;
   border-radius: 0;
-  text-align: center;
+  text-align: left;
 }
 .breadcrumb > li + li:before {
   content: "/\00a0";
