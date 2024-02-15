@@ -3,3 +3,8 @@
 .breadcrumb {
     text-align: left;
 }
+
+.tags {
+    background-color: #ffffff;
+    border-radius: 12px;
+}

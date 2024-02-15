@@ -6,6 +6,16 @@
       <div class="content-column-content">
          {{ partial "breadcrumbs.html" . }}
          <h1>{{ .Title }}</h1>
+         {{ $taxonomy := "tags" }}
+         {{ with .GetTerms $taxonomy }}
+         <p>
+           <!-- {{ (site.GetPage $taxonomy).LinkTitle }}: -->
+           {{ range $k, $_ := . -}}
+           {{ if $k }}, {{ end }}
+           <button class="tags" href="{{ .RelPermalink }}">#{{ .LinkTitle }}</button>
+           {{- end }}
+         </p>
+         {{ end }}
          {{ .Content }}
          {{ template "_internal/disqus.html" . }}
       </div>
