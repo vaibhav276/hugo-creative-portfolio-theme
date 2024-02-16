@@ -4,7 +4,9 @@
   <div class="row">
     <div class="col-lg-8">
       <div class="content-column-content">
-         {{ partial "breadcrumbs.html" . }}
+         {{ if not (eq .Params.hideBreadcrumbs true)}}
+           {{ partial "breadcrumbs.html" . }}
+         {{ end }}
          <h1>{{ .Title }}</h1>
          {{ $taxonomy := "tags" }}
          {{ with .GetTerms $taxonomy }}
